@@ -205,7 +205,7 @@ Internal load balancing uses live request counts published by each engine
 
 **If a DP job hangs, suspect divergence.** One rank took a different branch, so it is in a
 different collective than its peers. The fixes merged in this tree for
-"mismatched collectives on duplicate resume" (#55229) and "offline DP ranks' collectives
+"mismatched collectives on duplicate resume" ([#55229](../../issue-deep-dives/12-difficult-dp-duplicate-resume-hang.md)) and "offline DP ranks' collectives
 aligned with async scheduling" (#64457) are both exactly this class of bug.
 
 ## 7. Expert parallelism and EPLB

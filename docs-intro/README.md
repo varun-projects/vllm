@@ -30,7 +30,7 @@ Then, for applied debugging practice:
 
 | # | Folder | What you get |
 | --- | --- | --- |
-| 6 | [../issue-deep-dives/](../issue-deep-dives/) | Seven **real, fixed** bugs (medium → difficult), each with root cause, the actual diff, and flowcharts of the broken vs. fixed control flow |
+| 6 | [../issue-deep-dives/](../issue-deep-dives/) | Fourteen **real, fixed** bugs (medium → difficult), each with root cause, the actual diff, and flowcharts of the broken vs. fixed control flow |
 
 ---
 

@@ -146,7 +146,7 @@ duplication is cheap.
 | `SamplingParams` field | Handled by |
 | --- | --- |
 | `temperature` | `SamplingStates.apply_temperature` |
-| `top_p`, `top_k` | `vllm/v1/sample/ops/topk_topp_sampler.py`, `topk_topp_triton.py` |
+| `top_p`, `top_k` | `vllm/v1/sample/ops/topk_topp_sampler.py`, `topk_topp_triton.py`; the CUDA top-k path is the subject of [deep dive 10](../../issue-deep-dives/10-difficult-topk-nan-sign-key.md) |
 | `min_p` | `sample/min_p.py` |
 | `repetition_penalty`, `presence_penalty`, `frequency_penalty` | `sample/penalties.py` + `csrc/sampler.cu` |
 | `logit_bias` | `sample/logit_bias.py` |

@@ -167,7 +167,8 @@ flowchart TB
 count, uniformity, query length, active LoRA count. Anything that changes behaviour must be
 in that key — if it is not, a batch will be dispatched to a graph that was captured under
 different assumptions. The fix "Count base requests in the specialized CUDA graph LoRA key"
-(#67787) in this tree is exactly a missing component in this key.
+([#67787](../../issue-deep-dives/09-medium-lora-cudagraph-key-base-requests.md)) in this
+tree is exactly a wrongly computed component in this key.
 
 ## 7. Startup cost
 
@@ -185,7 +186,8 @@ measures that cost explicitly (`profile_cudagraph_memory`,
 `vllm/v1/worker/gpu/model_runner.py:1143`). The ordering matters — the KV cache is allocated
 *before* graphs are captured, so graph memory comes out of the remaining margin. Anything
 allocated after profiling erodes it; the fix "release warmup's blocks before CUDA graph
-capture" (#66523) in this tree addresses exactly that interaction.
+capture" ([#66523](../../issue-deep-dives/13-difficult-extensible-kv-cache-capture-oom.md))
+in this tree addresses exactly that interaction.
 
 | Flag | Effect |
 | --- | --- |

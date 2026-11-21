@@ -166,7 +166,7 @@ Fixed `k` is wasteful: when acceptance is low, drafting costs more than it saves
 
 | Mechanism | Code | What it does |
 | --- | --- | --- |
-| Online acceptance estimation | `OnlineAcceptanceEstimator`, `spec_decode/acceptance_estimator.py:342` | fits observed per-position acceptance and predicts the benefit of drafting |
+| Online acceptance estimation | `OnlineAcceptanceEstimator`, `spec_decode/acceptance_estimator.py:342` | fits observed per-position acceptance and predicts the benefit of drafting (its confidence feature is the subject of [deep dive 11](../../issue-deep-dives/11-difficult-acceptance-estimator-cancellation.md)) |
 | Adaptive verification | `AdaptiveVerificationManager`, `spec_decode/adaptive_verification.py:227` | uses measured step-cost curves to choose how many draft positions to verify per request |
 | Dynamic lookahead | `vllm/v1/spec_decode/dynamic/` | varies `k` per request per step |
 | Skip drafting | `Scheduler.can_skip_drafts` / `_drafts_unused`, `scheduler.py:497` | when the batch is large enough that the GPU is already compute-saturated, drafting is pure overhead — so skip it |

@@ -170,7 +170,7 @@ dispatch key. `get_num_active_loras_for_dispatch`
 which LoRA counts to capture graphs for.
 
 Getting this key wrong gives you a graph captured for one adapter count replayed for
-another; the fix "Count base requests in the specialized CUDA graph LoRA key" (#67787) in
+another; [deep dive 9](../../issue-deep-dives/09-medium-lora-cudagraph-key-base-requests.md) (#67787) in
 this tree is precisely that bug.
 
 ## 8. Usage

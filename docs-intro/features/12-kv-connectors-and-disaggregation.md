@@ -106,7 +106,7 @@ these is a named mechanism in `vllm/v1/core/sched/scheduler.py`:
 | A load's blocks must not be zeroed or cached while being written | `delay_cache_blocks=True`, `skip_zeroing_group_ids` | `:1488-1493` |
 | A local sub-block hit racing a longer remote hit | present a **block-aligned** local hit to the connector; truncate the partial tail if remote wins | `:1146-1201` |
 | A transfer fails or returns corrupt blocks | reset `num_computed_tokens` to force recomputation | `_handle_invalid_blocks`, `:3815`; `_update_requests_with_invalid_blocks`, `:3696` |
-| A decode-side preemption re-requests KV already fetched | connector-side dedup | fixed in #67497 |
+| A decode-side preemption re-requests KV already fetched | connector-side dedup | [deep dive 14](../../issue-deep-dives/14-difficult-p2p-repeated-pd-fetch.md) (#67497) |
 
 The sub-block alignment comment at `:1146` is a good example of the reasoning density here:
 

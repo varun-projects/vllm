@@ -164,7 +164,7 @@ scheduled but not yet executed has `num_new_tokens == 0` and is simply skipped
 | Setting | Effect |
 | --- | --- |
 | `--max-num-batched-tokens` | the chunk size ceiling. 2,048–8,192 is the usual range; larger favours TTFT and prefill throughput, smaller favours ITL smoothness |
-| `--long-prefill-token-threshold` | per-request cap so one 200k prompt cannot consume whole steps even if the budget would allow it |
+| `--long-prefill-token-threshold` | per-request cap so one 200k prompt cannot consume whole steps even if the budget would allow it. Ignored when chunked prefill is disabled — it was not always, which is half of [deep dive 8](../../issue-deep-dives/08-medium-mm-pooling-partial-prefill.md) |
 | `--enable-chunked-prefill` / `--no-enable-chunked-prefill` | on by default for most configurations |
 | `--disable-chunked-mm-input` | forbid splitting a single multimodal item across chunks (required for models with bidirectional attention over image tokens) |
 

@@ -157,6 +157,9 @@ Two mechanisms are worth naming:
   a **prefix cache hit lands inside the item** (so the chunk *starts* inside it, with
   nothing to roll back to) is the subject of
   [issue deep dive 4](../../issue-deep-dives/04-difficult-mm-item-split-on-prefix-hit.md).
+  For **pooling** models the same partial prefill is not merely inaccurate but rejected
+  outright, and two further paths reached it —
+  [issue deep dive 8](../../issue-deep-dives/08-medium-mm-pooling-partial-prefill.md).
 
 ## 6. Freeing encoder entries
 
